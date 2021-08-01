@@ -34,7 +34,7 @@ public class SQLiteDataTypeFactory extends DefaultDataTypeFactory {
 			logger.debug("createDataType(sqlType={}, sqlTypeName={}) - start", String.valueOf(sqlType), sqlTypeName);
 
 		if (sqlType != Types.OTHER && "text".equalsIgnoreCase(sqlTypeName)) {
-			return DataType.VARCHAR;
+			return new TextDataType();
 		}
 
 		return super.createDataType(sqlType, sqlTypeName);
